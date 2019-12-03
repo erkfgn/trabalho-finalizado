@@ -2,14 +2,14 @@
 <section class="content">
     <div class="container-fluid">
         <div class="block-header">
-            <h2>GENEROS</h2>
+            <h2>ALUGUEIS</h2>
         </div>
         <!-- Hover Rows -->
         <div class="row clearfix">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="card">
                     <div class="header">
-                        <form action="/genero" method="POST">
+                        <form action="/aluguel" method="POST">
                             <div class="row">
                                 <div class="col-md-10">
                                     <div class="form-group">
@@ -30,26 +30,33 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>GENERO</th>
-                                    <th>EDITA</th>
-                                    <th>DELETA</th>
+                                    <th>FILME</th>
+                                    <th>VALOR</th>
+                                    <th>PRAZO</th>
+                                    
                                 </tr>
                             </thead>
                             <tbody>
-                                <% Generos.forEach(function(genero){ %>
+                                <% Alugueis.forEach(function(aluguel){ %>
+                                    <% console.log(aluguel) %>
                                 <tr>
-                                    <th scope="row"><%=genero._id%></th>
-                                    <td><%=genero.nome%></td>
+                                    <th scope="row"><%=aluguel._id%></th>
+                                    <td><%=aluguel.filme.titulo%></td>
+                                    <td><%=aluguel.valor%></td>
+                                    <td><%=aluguel.prazo%></td>
+                                    
+                                    
+                                   
                                     <td>
-                                        <a href="/genero/edit/<%=genero._id%>"
-                                            class="btn btn-danger btn-circle-lg waves-effect waves-circle waves-float">
-                                            <i class="material-icons ">edit</i>
+                                        <a href="/aluguel/edit/<%=aluguel._id%>"
+                                            class="btn btn-warning btn-circle-lg waves-effect waves-circle waves-float">
+                                            <i class="material-icons">edit</i>
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="/genero/del/<%=genero._id%>"
-                                            class="btn btn-danger btn-circle-lg  waves-circle waves-float">
-                                            <i class="material-icons ">delete</i>
+                                        <a href="/aluguel/del/<%=aluguel._id%>"
+                                            class="btn btn-danger btn-circle-lg waves-effect waves-circle waves-float">
+                                            <i class="material-icons">delete</i>
                                         </a>
                                     </td>
                                 </tr>
